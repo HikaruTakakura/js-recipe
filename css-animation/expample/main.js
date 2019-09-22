@@ -1,6 +1,14 @@
 const display = document.getElementById("display")
-const button = document.getElementById("button")
+const squareButton = document.getElementById("square-button")
+const circleButton = document.getElementById("circle-button")
 
-button.onclick = function toggleStyle(){
-    display.classList.toggle('add-color');
-}
+
+squareButton.onclick = function (){
+    display.classList.remove('circle');
+    display.classList.add('square');
+};
+
+circleButton.onclick = function (){
+    display.classList.add('circle');
+    display.classList.remove('square');
+};
