@@ -11,10 +11,12 @@ const answers = {
 
 fButton.onclick = function(){
     answerContent.textContent = answers.f
+    hiddenContent.classList.add('hidden')
 };
 
 gButton.onclick = function(){
     answerContent.textContent = answers.g
+    hiddenContent.classList.add('hidden')
 };
 
 wButton.onclick = function(){
