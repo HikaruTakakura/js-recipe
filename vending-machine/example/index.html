@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <div id="vending-container">
+        <div id="content-container">
+            <div id="content">
+                <img src="./images/coffee-bottle.png" width="80" height="130">
+                <div>180円</div>
+                <button id="coffee-button">push</button>
+            </div>
+            <div id="content">
+                <img src="./images/cola-bottle.png" width="80" height="130">
+                <div>150円</div>
+                <button id="cola-button">push</button>
+            </div>
+            <div id="content">
+                <img src="./images/tea-bottle.png" width="80" height="130">
+                <div>120円</div>
+                <button id="tea-button">push</button>
+            </div>
+        </div>
+        <div id="coin-container">
+            <div>硬貨を入れてください</div>
+            <div>
+                <div id="money" class="corrency">0</div>
+                <div class="corrency">円</div>
+            </div>
+        </div>
+        <div id="outlet-container" class="outlet-container">
+            <div id="outlet">
+                <img id="buy-coffee" src="./images/coffee-bottle.png" width="80" height="130" class="hidden">
+                <img id="buy-cola" src="./images/cola-bottle.png" width="80" height="130" class="hidden"> 
+                <img id="buy-tea" src="./images/tea-bottle.png" width="80" height="130" class="hidden">
+                <div id="changes" class="hidden">
+                    <img src="./images/100yen.png" width="70" height="70" > 
+                    <img src="./images/50yen.png" width="70" height="70" >
+                    <img src="./images/10yen.png" width="70" height="70" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="coins">
+        <div id="hundred-yen" class="coin">
+            <img src="./images/100yen.png" width="70" height="70">
+        </div>
+        <div id="half-hundred-yen" class="coin">
+            <img src="./images/50yen.png" width="70" height="70">
+        </div>
+        <div id="ten-yen" class="coin">
+            <img src="./images/10yen.png" width="70" height="70">
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>

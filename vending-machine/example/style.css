@@ -1,0 +1,60 @@
+#vending-container{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 3px #000000;
+    width: 300px;
+    background: rgb(201, 59, 59);
+}
+
+#content-container{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 3px #000000;
+    width: 260px;
+    background: rgb(241, 240, 238);
+}
+
+#content{
+    display: inline-block;
+}
+
+.can-buy{
+    background-color: rgb(69, 211, 156);
+}
+
+#coin-container{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 3px #000000;
+    width: 160px;
+    background: rgb(128, 231, 159);
+    margin-left: 100px;
+}
+
+.corrency{
+    display: inline-block;
+    margin-left: 130px;
+}
+
+.outlet-container{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 3px #000000;
+    width: 260px;
+    height: 200px;
+    background: rgb(253, 253, 253);
+}
+
+.coin{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+}
+
+.hidden{
+    display: none;
+}
