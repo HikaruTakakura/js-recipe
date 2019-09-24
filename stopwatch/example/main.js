@@ -1,21 +1,22 @@
 const display = document.getElementById("display")
-const stopButton = document.getElementById("stop-button")
-const startButton = document.getElementById("start-button")
+const button = document.getElementById("button")
 
+let count = 0
 
-let count = 0;
+const countUp = function(){
+    count += 1
+    display.textContent = count/100
+}
 
-const countup = function(){
-    count ++
-    display.textContent = count
-};
+let id = null
 
-let id = setInterval(countup,1000);
-
-stopButton.onclick = function(){
-    clearInterval(id)
-};
-
-startButton.onclick = function(){
-    id = setInterval(countup,1000);
-};
+button.onclick = function(){
+    if (id === null) {
+        id = setInterval(countUp, 10)
+        button.textContent = "stop"
+    } else {
+        clearInterval(id)
+        id = null
+        button.textContent = "start"
+    }
+}
