@@ -11,10 +11,10 @@ const countUp = function(){
 let id = null
 
 button.onclick = function(){
-    if (id === null) {
+    if (id === null) { // start
         id = setInterval(countUp, 10)
         button.textContent = "stop"
-    } else {
+    } else { // stop
         clearInterval(id)
         id = null
         button.textContent = "start"
