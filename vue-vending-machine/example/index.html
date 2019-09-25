@@ -16,17 +16,17 @@
                     <div id="content">
                         <img src="./images/coffee-bottle.png" width="80" height="130">
                         <div>180円</div>
-                        <button id="coffee-button" v-bind:class="sample1">push</button>
+                        <button id="coffee-button" v-on:Click="buyCoffee">push</button>
                     </div>
                     <div id="content">
                         <img src="./images/cola-bottle.png" width="80" height="130">
                         <div>150円</div>
-                        <button id="cola-button">push</button>
+                        <button id="cola-button" v-on:Click="buyCola">push</button>
                     </div>
                     <div id="content">
                         <img src="./images/tea-bottle.png" width="80" height="130">
                         <div>120円</div>
-                        <button id="tea-button">push</button>
+                        <button id="tea-button" v-on:Click="buyTea">push</button>
                     </div>
                 </div>
                 <div id="coin-container">
@@ -66,6 +66,9 @@
     <script>
         var app = new Vue({
                 el: '#app',
+                data:{
+                    hasMoney:0,
+                },
                 methods:{
                     addHundred: function(){
                         this.hasMoney = this.hasMoney + 100
@@ -103,9 +106,26 @@
                             teaButton.classList.add('can-buy')
                         }
                     },
-                },
-                data:{
-                    hasMoney:0,
+                    buyCoffee:function(){
+                        if (this.hasMoney >= 180) {
+                            this.hasMoney = 0
+                        }else{
+                            return false
+                        }
+                    },
+                    buyCola:function(){
+                        if (this.hasMoney >= 150) {
+                            this.hasMoney = 0
+                        }else{
+                            return false
+                        }                    },
+                    buyTea:function(){
+                        if (this.hasMoney >= 120) {
+                            this.hasMoney = 0
+                        }else{
+                            return false
+                        }                    
+                    },
                 },
             })
     </script>
