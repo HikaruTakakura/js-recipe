@@ -16,17 +16,17 @@
                     <div id="content">
                         <img src="./images/coffee-bottle.png" width="80" height="130">
                         <div>180円</div>
-                        <button id="coffee-button" v-on:Click="buyCoffee">push</button>
+                        <button id="coffee-button" v-on:Click="buyCoffee" v-bind:class="cfClass">push</button>
                     </div>
                     <div id="content">
                         <img src="./images/cola-bottle.png" width="80" height="130">
                         <div>150円</div>
-                        <button id="cola-button" v-on:Click="buyCola">push</button>
+                        <button id="cola-button" v-on:Click="buyCola" v-bind:class="clClass">push</button>
                     </div>
                     <div id="content">
                         <img src="./images/tea-bottle.png" width="80" height="130">
                         <div>120円</div>
-                        <button id="tea-button" v-on:Click="buyTea">push</button>
+                        <button id="tea-button" v-on:Click="buyTea" v-bind:class="teClass">push</button>
                     </div>
                 </div>
                 <div id="coin-container">
@@ -68,42 +68,51 @@
                 el: '#app',
                 data:{
                     hasMoney:0,
+                    cfClass:"none-buy",
+                    clClass:"none-buy",
+                    teClass:"none-buy",
                 },
                 methods:{
                     addHundred: function(){
                         this.hasMoney = this.hasMoney + 100
-                        if (hasMoney >= 180) {
-                            console.log(hasMoney)
-                        }
-                        if (hasMoney >= 150) {
-                            colaButton.classList.add('can-buy')
-                        }
-                        if (hasMoney >= 120) {
-                            teaButton.classList.add('can-buy')
+                        if (this.hasMoney >= 120) {
+                            return this.teClass = "can-buy"
+                        }else{
+                            return false
+                        };
+                        if (this.hasMoney >= 150) {
+                            return this.clClass = "can-buy"
+                        }else{
+                            return false
+                        };
+                        if (this.hasMoney >= 180) {
+                            return this.cfClass = "can-buy"
+                        }else{
+                            return false
                         }
                     },
                     addHalfHandred: function(){
                         this.hasMoney = this.hasMoney + 50
-                        if (hasMoney >= 180) {
-                            coffeeButton.classList.add('can-buy')
+                        if (this.hasMoney >= 180) {
+                            return this.cfClass = "can-buy"
                         }
-                        if (hasMoney >= 150) {
-                            colaButton.classList.add('can-buy')
+                        if (this.hasMoney >= 150) {
+                            return this.clClass = "can-buy"
                         }
-                        if (hasMoney >= 120) {
-                            teaButton.classList.add('can-buy')
+                        if (this.hasMoney >= 120) {
+                            return this.teClass = "can-buy"
                         }
                     },
                     addTen:function(){
                         this.hasMoney = this.hasMoney + 10
-                        if (hasMoney >= 180) {
-                            coffeeButton.classList.add('can-buy')
+                         if (this.hasMoney >= 180) {
+                            return this.cfClass = "can-buy"
                         }
-                        if (hasMoney >= 150) {
-                            colaButton.classList.add('can-buy')
+                        if (this.hasMoney >= 150) {
+                            return this.clClass = "can-buy"
                         }
-                        if (hasMoney >= 120) {
-                            teaButton.classList.add('can-buy')
+                        if (this.hasMoney >= 120) {
+                            return this.teClass = "can-buy"
                         }
                     },
                     buyCoffee:function(){

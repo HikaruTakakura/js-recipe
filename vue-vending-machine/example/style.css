@@ -24,6 +24,10 @@
     background-color: rgb(69, 211, 156);
 }
 
+.none-buy{
+    background-color: rgb(182, 174, 174);
+}
+
 #coin-container{
     padding: 0.5em 1em;
     margin: 2em 0;
