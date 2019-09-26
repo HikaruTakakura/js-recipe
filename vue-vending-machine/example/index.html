@@ -38,10 +38,10 @@
                 </div>
                 <div id="outlet-container" class="outlet-container">
                     <div id="outlet">
-                        <img id="buy-coffee" src="./images/coffee-bottle.png" width="80" height="130" class="hidden">
-                        <img id="buy-cola" src="./images/cola-bottle.png" width="80" height="130" class="hidden"> 
-                        <img id="buy-tea" src="./images/tea-bottle.png" width="80" height="130" class="hidden">
-                        <div id="changes" class="hidden">
+                        <img id="buy-coffee" src="./images/coffee-bottle.png" width="80" height="130" v-bind:class="cfHidden">
+                        <img id="buy-cola" src="./images/cola-bottle.png" width="80" height="130" v-bind:class="clHidden"> 
+                        <img id="buy-tea" src="./images/tea-bottle.png" width="80" height="130" v-bind:class="teHidden">
+                        <div id="changes" v-bind:class="chHidden">
                             <img src="./images/100yen.png" width="70" height="70" > 
                             <img src="./images/50yen.png" width="70" height="70" >
                             <img src="./images/10yen.png" width="70" height="70" >
@@ -71,71 +71,161 @@
                     cfClass:"none-buy",
                     clClass:"none-buy",
                     teClass:"none-buy",
+                    cfHidden:"hidden",
+                    clHidden:"hidden",
+                    teHidden:"hidden",
+                    chHidden:"hidden",
                 },
                 methods:{
                     addHundred: function(){
                         this.hasMoney = this.hasMoney + 100
                         if (this.hasMoney >= 120) {
-                            return this.teClass = "can-buy"
+                             this.teClass = "can-buy"
+
+                            if (this.hasMoney >= 150) {
+                                 this.clClass = "can-buy"
+
+                                if (this.hasMoney >= 180) {
+                                     this.cfClass = "can-buy"
+                                }else{
+                                    return false
+                                }
+                                
+                            }else{
+                                return false
+                            };
+
                         }else{
                             return false
                         };
-                        if (this.hasMoney >= 150) {
-                            return this.clClass = "can-buy"
-                        }else{
-                            return false
-                        };
-                        if (this.hasMoney >= 180) {
-                            return this.cfClass = "can-buy"
-                        }else{
-                            return false
-                        }
                     },
                     addHalfHandred: function(){
                         this.hasMoney = this.hasMoney + 50
-                        if (this.hasMoney >= 180) {
-                            return this.cfClass = "can-buy"
-                        }
-                        if (this.hasMoney >= 150) {
-                            return this.clClass = "can-buy"
-                        }
                         if (this.hasMoney >= 120) {
-                            return this.teClass = "can-buy"
-                        }
+                             this.teClass = "can-buy"
+
+                            if (this.hasMoney >= 150) {
+                                 this.clClass = "can-buy"
+
+                                if (this.hasMoney >= 180) {
+                                     this.cfClass = "can-buy"
+                                }else{
+                                    return false
+                                }
+                                
+                            }else{
+                                return false
+                            };
+
+                        }else{
+                            return false
+                        };
                     },
                     addTen:function(){
                         this.hasMoney = this.hasMoney + 10
-                         if (this.hasMoney >= 180) {
-                            return this.cfClass = "can-buy"
-                        }
-                        if (this.hasMoney >= 150) {
-                            return this.clClass = "can-buy"
-                        }
                         if (this.hasMoney >= 120) {
-                            return this.teClass = "can-buy"
-                        }
+                             this.teClass = "can-buy"
+
+                            if (this.hasMoney >= 150) {
+                                 this.clClass = "can-buy"
+
+                                if (this.hasMoney >= 180) {
+                                     this.cfClass = "can-buy"
+                                }else{
+                                    return false
+                                }
+                                
+                            }else{
+                                return false
+                            };
+
+                        }else{
+                            return false
+                        };
                     },
                     buyCoffee:function(){
-                        if (this.hasMoney >= 180) {
+                        if (this.hasMoney > 180) {
+                            this.cfClass = "none-buy"
+                            this.clClass = "none-buy"
+                            this.teClass = "none-buy"
+                            this.cfHidden = ""
+                            setTimeout(() => {
+                                this.cfHidden = "hidden"
+                            }, 5000);
+                            this.chHidden = ""
+                            setTimeout(() => {
+                                this.chHidden = "hidden"
+                            }, 5000);
+                            this.hasMoney = 0
+                        }else if (this.hasMoney = 180) {
+                            this.cfClass = "none-buy"
+                            this.clClass = "none-buy"
+                            this.teClass = "none-buy"
+                            this.cfHidden = ""
+                            setTimeout(() => {
+                                this.cfHidden = "hidden"
+                            }, 5000);
                             this.hasMoney = 0
                         }else{
                             return false
                         }
                     },
                     buyCola:function(){
-                        if (this.hasMoney >= 150) {
+                        if (this.hasMoney > 180) {
+                            this.cfClass = "none-buy"
+                            this.clClass = "none-buy"
+                            this.teClass = "none-buy"
+                            this.clHidden = ""
+                            setTimeout(() => {
+                                this.clHidden = "hidden"
+                            }, 5000);
+                            this.chHidden = ""
+                            setTimeout(() => {
+                                this.chHidden = "hidden"
+                            }, 5000);
+                            this.hasMoney = 0
+                        }else if (this.hasMoney = 180) {
+                            this.cfClass = "none-buy"
+                            this.clClass = "none-buy"
+                            this.teClass = "none-buy"
+                            this.clHidden = ""
+                            setTimeout(() => {
+                                this.clHidden = "hidden"
+                            }, 5000);
                             this.hasMoney = 0
                         }else{
                             return false
-                        }                    },
+                        }             
+                    },
                     buyTea:function(){
-                        if (this.hasMoney >= 120) {
+                        if (this.hasMoney > 180) {
+                            this.cfClass = "none-buy"
+                            this.clClass = "none-buy"
+                            this.teClass = "none-buy"
+                            this.teHidden = ""
+                            setTimeout(() => {
+                                this.teHidden = "hidden"
+                            }, 5000);
+                            this.chHidden = ""
+                            setTimeout(() => {
+                                this.chHidden = "hidden"
+                            }, 5000);
+                            this.hasMoney = 0
+                        }else if (this.hasMoney = 180) {
+                            this.cfClass = "none-buy"
+                            this.clClass = "none-buy"
+                            this.teClass = "none-buy"
+                            this.teHidden = ""
+                            setTimeout(() => {
+                                this.teHidden = "hidden"
+                            }, 5000);
                             this.hasMoney = 0
                         }else{
                             return false
-                        }                    
+                        }            
                     },
                 },
+                
             })
     </script>
 </body>
