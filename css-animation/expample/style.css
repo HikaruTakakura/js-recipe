@@ -1,22 +1,13 @@
-.triangle{
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 10px solid #000000;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid transparent;
+.transition {
+    transition: all 1s;
 }
 
 .square {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background: black;
- }
+}
 
- .circle {
-    width: 100px;
-    height: 100px;
-    background: black;
-    border-radius: 50px;
- }
+.circled {
+    border-radius: 50%;
+}
