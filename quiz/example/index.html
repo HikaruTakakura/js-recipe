@@ -1,30 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Quiz</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div id="quiz-container">
-        <div id="quiz-content">問題：このポケモンはなにタイプでしょう？</div>
-        <img src="./images/zenigame.jpeg">
-        <div id="answer-container">
-            <button id="answer-1st">ほのおタイプ</button>
-            <button id="answer-2nd">くさタイプ</button>
-            <button id="answer-3rd">みずタイプ</button>
+        <h2 id="quiz-text"></h2>
+        <img id="quiz-image">
+        <div id="choices-container">
+            <button id="choice-1"></button>
+            <button id="choice-2"></button>
+            <button id="choice-3"></button>
         </div>
-        <div id="answer-content">正誤判定</div>
-        <div id="hidden" class="hidden"> 
-            <ul>
-                <li>名前：ゼニガメ</li>
-                <li>タイプ：みずタイプ</li>
-                <li>分類：かめのこポケモン</li>
-                <li>図鑑説明：こうらに　とじこもり　みを　まもる。　あいての　すきを　みのがさずみずを　ふきだして　はんげきする。</li>
-            </ul>
-        </div>
+        <div id="feedback"></div>
+        <button id="next-quiz">次の問題へ</button>
     </div>
 
     <script src="./main.js"></script>
