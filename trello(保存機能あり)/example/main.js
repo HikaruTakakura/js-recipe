@@ -30,10 +30,10 @@ const createCard = function( text ){
   card.className = "card"
 
   // テキストを表示する部分を作る
-  const todoText = document.createElement("div")
-  todoText.className = "todo"
-  todoText.textContent = text
-  card.append( todoText )
+  const todo = document.createElement("div")
+  todo.className = "todo"
+  todo.textContent = text
+  card.append( todo )
 
   // 削除ボタンを作る
   const deleteButton = document.createElement("div")
