@@ -2,7 +2,7 @@ const inputElement = document.getElementById("input-todo")
 const container = document.getElementById("cards-container")
 const addButton = document.getElementById("add-button")
 
-let list = JSON.parse( localStorage["list"] || "[]" )
+let list = JSON.parse(localStorage["list"] || "[]")
 
 // 追加ボタンを押したら
 addButton.onclick = function(){
@@ -10,21 +10,21 @@ addButton.onclick = function(){
   const text = inputElement.value
 
   // listにテキストを追加する
-  list.push( text )
+  list.push(text)
 
   // localStorageを更新する
-  localStorage["list"] = JSON.stringify( list )
+  localStorage["list"] = JSON.stringify(list)
 
   // カードを追加する
-  const card = createCard( text )
-  container.append( card )
+  const card = createCard(text)
+  container.append(card)
 
   // 入力欄を空にする
   inputElement.value = ''
 }
 
 // 共通の処理：テキストからカードを作成する
-const createCard = function( text ){
+const createCard = function(text){
   // カードの枠を作る
   const card = document.createElement("div")
   card.className = "card"
@@ -33,7 +33,7 @@ const createCard = function( text ){
   const todo = document.createElement("div")
   todo.className = "todo"
   todo.textContent = text
-  card.append( todo )
+  card.append(todo)
 
   // 削除ボタンを作る
   const deleteButton = document.createElement("div")
@@ -67,7 +67,7 @@ const createCard = function( text ){
 // 画面読み込み時、localStorageをもとにカードを追加する
 const fragment = document.createDocumentFragment()
 for(const text of list){
-  const card = createCard( text )
-  fragment.append( card )
+  const card = createCard(text)
+  fragment.append(card)
 }
 container.append(fragment)
