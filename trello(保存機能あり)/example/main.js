@@ -56,8 +56,6 @@ const createCard = function(text){
 
     // カードを削除する
     card.remove()
-    // IEにも対応するなら
-    // container.removeChild(card)
   }
   card.append( deleteButton )
 
