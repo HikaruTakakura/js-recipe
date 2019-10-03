@@ -20,7 +20,7 @@ addButton.onclick = function(){
   container.append( card )
 
   // 入力欄を空にする
-  inputElement.textContent = ''
+  inputElement.value = ''
 }
 
 // 共通の処理：テキストからカードを作成する
