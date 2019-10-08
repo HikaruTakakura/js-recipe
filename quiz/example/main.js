@@ -38,7 +38,7 @@ const quizzes = [
             {
                 text: "１",
                 isCorrect: false,
-                feedback: "おしい！ひとつ少ないよ。"
+                feedback: "残念！ひとつ少ないよ。"
             },
             {
                 text: "２",
@@ -48,7 +48,28 @@ const quizzes = [
             {
                 text: "３",
                 isCorrect: false,
-                feedback: "おしい！ひとつ多いよ。"
+                feedback: "残念！ひとつ多いよ。"
+            }
+        ]
+    },
+    {
+        text: "この城の名前は？",
+        image: "Maruoka.png",
+        choices: [
+            {
+                text: "丸岡城",
+                isCorrect: true,
+                feedback: "正解！どこからどうみても丸岡城だね。"
+            },
+            {
+                text: "丸亀城",
+                isCorrect: true,
+                feedback: "残念！どこからどうみても丸亀城ではないよ。"
+            },
+            {
+                text: "丸子城",
+                isCorrect: false,
+                feedback: "残念！どこからどうみても丸子城ではないよ。"
             }
         ]
     }
@@ -61,7 +82,7 @@ const reloadQuiz = function(quizNumber){
     const quiz = quizzes[quizNumber]
 
     // 問題文を表示
-    quizText.textContent = quiz.text
+    quizText.textContent = "Q. " + quiz.text
 
     // 画像を表示
     quizImage.src = "./images/" + quiz.image
@@ -87,24 +108,16 @@ const choiced = function(choiceNumber) {
     // フィードバックを表示
     feedback.textContent = choice.feedback
 
-    // 正解 かつ 次の問題があれば、次の問題ボタンを表示
+    // 正解ならば……
     if(choice.isCorrect){
         if(quizNumber < quizzes.length-1){
-            // 次の問題ボタンを表示
+            // 次の問題があれば、次の問題ボタンを表示
             nextQuizButton.classList.remove("hidden")
         } else {
-            // 結果表示
+            // 次の問題がなければ、結果を表示
 
         }
     }
-}
-
-// 次の問題ボタンを押したら
-nextQuizButton.onclick = function(){
-    // 問題番号を１増やす
-    quizNumber += 1
-    // quizNumber番目の問題を読み込む
-    reloadQuiz(quizNumber)
 }
 
 choice1.onclick = function() {
@@ -118,6 +131,14 @@ choice2.onclick = function() {
 choice3.onclick = function() {
     // 2番目の選択肢を選択
     choiced(2)
+}
+
+// 次の問題ボタンを押したら
+nextQuizButton.onclick = function(){
+    // 問題番号を１増やす
+    quizNumber += 1
+    // quizNumber番目の問題を読み込む
+    reloadQuiz(quizNumber)
 }
 
 // 0番目のクイズを表示
