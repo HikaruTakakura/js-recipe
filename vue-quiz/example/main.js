@@ -1,4 +1,4 @@
-const app = new Vue({
+new Vue({
   el: "#app",
   data: {
     feedback: "",
@@ -31,6 +31,11 @@ const app = new Vue({
       if(choice.isCorrect){
         // 次の問題へ
       }
+    }
+  },
+  computed: {
+    quizImagePath() {
+      return './images/' + this.quiz.image
     }
   }
 })
