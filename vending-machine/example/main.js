@@ -14,9 +14,9 @@ const drinks = [
     },
 ]
 
-const reloadView = function(){
-    firstDrinkImage.src = "./images/" + drinks[0].image
-    firstPriceDisplay.textContent = drinks[0].price + "円"
+const reloadView = function(index){
+    firstDrinkImage.src = "./images/" + drinks[index].image
+    firstPriceDisplay.textContent = drinks[index].price + "円"
     moneyDisplay.textContent = "0円"
     console.log(drinks)
 }
@@ -29,10 +29,10 @@ const hideImage = function(){
     drinkImage.classList.add("hidden")
 }
 
-firstDrinkButton.onclick = function(){
+firstDrinkButton.onclick = function(index){
     moneyDisplay.textContent = "お釣り:"　+ (inputMoney - drinks[0].price) + "円"
     inputMoney  = 0
-    drinkImage.src = "./images/" + drinks[0].image
+    drinkImage.src = "./images/" + drinks[index].image
     firstDrinkButton.disabled = true
     drinkImage.classList.remove("hidden")
     setTimeout(hideImage, 3000);
