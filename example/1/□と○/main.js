@@ -1,5 +1,5 @@
-const figure = document.getElementById("figure")
+const figure = document.getElementById("figure");
 
-figure.onclick = function (){
-  figure.classList.toggle("rounded")
-}
+figure.onclick = function() {
+  figure.classList.toggle("rounded");
+};

@@ -3,7 +3,14 @@ module.exports = {
         "browser": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": [
+        "html",
+        "prettier"
+    ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly",
@@ -13,6 +20,7 @@ module.exports = {
         "ecmaVersion": 2018
     },
     "rules": {
-        "indent": ["error", 2]
+        "indent": ["error", 2],
+        "prettier/prettier": "error"
     }
 };

@@ -9,7 +9,8 @@ new Vue({
         {
           text: "ゴリアテ",
           isCorrect: false,
-          feedback: "残念！ゴリアテは、旧約聖書に登場するダビデに石で殺される巨人だよ。"
+          feedback:
+            "残念！ゴリアテは、旧約聖書に登場するダビデに石で殺される巨人だよ。"
         },
         {
           text: "ゼニガメ",
@@ -26,16 +27,16 @@ new Vue({
   },
   methods: {
     choiced(choice) {
-      this.feedback = choice.feedback
+      this.feedback = choice.feedback;
 
-      if(choice.isCorrect){
+      if (choice.isCorrect) {
         // 次の問題へ
       }
     }
   },
   computed: {
     quizImagePath() {
-      return './images/' + this.quiz.image
+      return "./images/" + this.quiz.image;
     }
   }
-})
+});
