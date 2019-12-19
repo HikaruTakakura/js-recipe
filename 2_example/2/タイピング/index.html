@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>タイピングゲーム</title>
+</head>
+<body>
+  <div class="container">
+    <div id="start-window">
+      <button id="start-button">スタート</button>
+      <p>エンターキーをおしてスタート！</p>
+    </div>
+
+    <div id="mondai-window" style="display: none;">
+      <h1 id="mondai-display"></h1>
+      <input type="text" id="input">
+      <p id="time-display"></p>
+    </div>
+
+    <div id="result-window" style="display: none;">
+      <h1>終了！</h1>
+      <h2 id="result-display"></h2>
+      <button id="reset-button">もういちど</button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
