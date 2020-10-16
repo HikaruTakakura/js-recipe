@@ -102,7 +102,7 @@ const reloadQuiz = function(quizNumber) {
 
 // 共通の処理②
 // choiceNumber番目の選択肢を選択
-const choiced = function(choiceNumber) {
+const choose = function (choiceNumber) {
   // quizzes[quizNumber].choices[choiceNumber] は使いまわすので、定数に入れておく
   const choice = quizzes[quizNumber].choices[choiceNumber];
 
@@ -122,15 +122,15 @@ const choiced = function(choiceNumber) {
 
 choice1.onclick = function() {
   // 0番目の選択肢を選択
-  choiced(0);
+  choose(0);
 };
 choice2.onclick = function() {
   // 1番目の選択肢を選択
-  choiced(1);
+  choose(1);
 };
 choice3.onclick = function() {
   // 2番目の選択肢を選択
-  choiced(2);
+  choose(2);
 };
 
 // 次の問題ボタンを押したら
