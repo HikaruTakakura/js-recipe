@@ -35,7 +35,7 @@ header {
   border-radius: 4px;
   background-color: #e2e4e6;
 }
-.list-container:nth-child(n+2) {
+.list-container:nth-child(n + 2) {
   margin-left: 8px;
 }
 .list-header {
@@ -56,7 +56,7 @@ header {
   border-radius: 4px;
   box-shadow: 0 1px 0 #ccc;
 }
-.card:nth-of-type(n+2) {
+.card:nth-of-type(n + 2) {
   margin-top: 8px;
 }
 .card:last-child {
