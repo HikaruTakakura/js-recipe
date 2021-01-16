@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="kickoff">Kickoff</h1>
+        <button id="button">クリック！！</button>
+    </div>
+
+    <script>
+        const kickoff = document.getElementById("kickoff")
+        const button = document.getElementById("button")
+        button.onclick = function(){
+            kickoff.textContent = "キックオフ"
+        }
+    </script>
+</body>
+</html>
