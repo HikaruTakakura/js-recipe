@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Fizz Buzz</h1>
+  </body>
+  <script>
+    const genkiFunction = function(number) {
+      for (let n = 1; n < number; n++) {
+        if (n % 3 === 0) {
+          console.log("Fizz")
+        } else if (n % 5 === 0) {
+          console.log("Buzz")
+        } else if (n % 15 === 0) {
+          console.log("FizzBuzz")
+        } else {
+          console.log(n)
+        }
+      }
+    }
+    genkiFunction(70)
+  </script>
+</html>
