@@ -5,6 +5,9 @@
   },
   "extends": ["eslint:recommended"],
   "plugins": ["eslint-plugin-html"],
+  "globals": {
+    "Vue": true
+  },
   "parserOptions": {
     "ecmaVersion": 2018
   }
