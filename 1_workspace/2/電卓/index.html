@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="addButton(1)">1</button>
+    <button v-on:click="addButton(2)">2</button>
+    <button v-on:click="addButton(3)">3</button>
+    <button v-on:click="addButton(4)">4</button>
+    <button v-on:click="addButton(5)">5</button>
+    <button v-on:click="addButton(6)">6</button>
+    <button v-on:click="addButton(7)">7</button>
+    <button v-on:click="addButton(8)">8</button>
+    <button v-on:click="addButton(9)">9</button>
+    <button v-on:click="calButton('plus')">+</button>
+    <button v-on:click="calButton('minus')">-</button>
+    <button v-on:click="calButton('kake')">×</button>
+    <button v-on:click="calButton('waru')">÷</button>
+    <button v-on:click="equalButton">=</button>
+    <button v-on:click="clearButton">c</button> 
+    <div>{{inputNumber}}</div>
+    <div>{{totalNumber}}</div>
+  </div>
+
+
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      inputNumber:0,
+      total:[],
+      totalNumber:0,
+    },
+  
+    methods: {
+      addButton: function(x){
+        this.inputNumber = this.inputNumber * 10 + x;
+
+      },
+
+
+      calButton: function(y){
+        this.total.push(this.inputNumber);
+        this.total.push(y);
+        this.inputNumber = 0;
+        console.log(this.total)
+      },
+
+      equalButton: function(){
+        this.total.push(this.inputNumber);
+        if(this.total[1]== "plus"){
+          this.totalNumber = this.total[0] + this.total[2];
+        }else if(this.total[1]== "minus"){
+          this.totalNumber = this.total[0] - this.total[2];
+        }else if(this.total[1]== "kake"){
+          this.totalNumber = this.total[0] * this.total[2];
+        }else if(this.total[1]== "waru"){
+          this.totalNumber = this.total[0] / this.total[2];
+        }
+        this.total =[];
+        this.inputNumber = 0;
+      },
+
+      clearButton: function(){
+        this.total =[];
+        this.totalNumber = 0;
+      },
+
+
+
+
+      },
+  })
+  </script>
+</body>
+</html>

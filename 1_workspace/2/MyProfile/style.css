@@ -1,0 +1,126 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  background:url(https://weblabla.mikim.me/wp-content/themes/weblabla/images/codepen/background03.jpg) fixed;
+  background-size: cover;
+  transition: all 1s;
+ }
+
+.bodyfadeout {
+  opacity: 0;
+}
+
+button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+#main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  color: honeydew;
+  font-size: 25px;
+}
+
+#opning{
+  margin-top: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70vh;
+  
+}
+
+#Profile{
+  display: flex;
+  flex-direction: row; 
+}
+
+h3{
+  margin-top: 10%;
+}
+
+img{
+  height: 50vh;
+  display: inline-block;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+  border-radius: 40px;
+}
+
+#information{
+  margin-right: 30px;
+}
+
+h5{
+  border-left: 3px solid #95C5A3;
+  padding-left: 10px;
+  margin-top: 35px;
+}
+
+#linkProfile{
+  font-size: 55px;
+  font-family:sans-serif;
+  color: #FFF;
+  text-shadow:0px 0px 10px #FFF;
+}
+
+.fadeout {
+  animation : fadeOut 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade_in_up{
+  animation:fadeInUp 3s linear;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+ 0% { 
+  opacity: 0; 
+  transform: translateY(60px);
+ }
+ 100% {
+  opacity: 1;
+  transform: translateY(0);
+ }
+}
+
+#main-link{
+  display: flex;
+  flex-direction: row; 
+  margin: 0 0 0 auto;
+}
+
+#link{
+  margin: 10px;
+}
+
+#button1{
+  width: auto;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 20px;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+
+}

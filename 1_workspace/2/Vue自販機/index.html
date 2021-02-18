@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="inputText">
+    <button v-on:click="addButton">追加</button>
+    <div>{{currentMoney}}</div>
+    <button v-on:click="buyDrink">購入</button>
+    <div v-for="drink in totalDrink">{{drink}}</div>
+
+
+
+  </div>
+
+  <script>
+    var app = new Vue({
+    el: '#app',
+    data: {
+      currentMoney: 0,
+      totalDrink: [],
+      inputText: "",
+    },
+  
+    methods: {
+      addButton: function(){
+        this.currentMoney += Number(this.inputText);
+      },
+      buyDrink: function(){
+        this.currentMoney -= 100;
+        this.totalDrink.push("購入したよ");
+      }
+    },
+  })
+  </script>
+</body>
+
+</html>

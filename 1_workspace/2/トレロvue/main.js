@@ -1,3 +1,21 @@
+var app = new Vue({
+  el: '#app',
+  data: {
+    currentMoney: 0,
+    totalDrink: [],
+    inputText: "",
+  },
+
+  methods: {
+    addButton: function(){
+      this.currentMoney += Number(this.inputText);
+    },
+    buyDrink: function(){
+      this.currentMoney -= 100;
+      this.totalDrink.push("購入したよ");
+    }
+  },
+})
 
 const inputElement = document.getElementById("input-todo")
 const container = document.getElementById("cards-container")

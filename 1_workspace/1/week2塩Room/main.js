@@ -26,3 +26,4 @@ const fib = function(n){
 setInterval(countUp,1000)
 
 
++=""
