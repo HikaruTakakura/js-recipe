@@ -5,21 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Document</title>
+    <title>trello</title>
   </head>
   <body>
-    <h1>この犬の名前は？</h1>
-    <div class="texts">
-      <img src="sibakenn.jpg" alt="" class="shibakenn" />
-      <div class="buttons">
-        <button id="button1">パグ</button>
-        <button id="button2">柴犬</button>
-        <button id="button3">ポメラニアン</button>
+    <div class="main">
+      <input type="text" id="edgName" />
+      <button onclick="addEdg()">ADD IT!</button>
+      <div id="card-1">
+        <h1>Todo-1</h1>
+        <input id="input-1" />
+        <button id="1" onclick="addTodo(this)">＋</button>
+        <div id="display-1"></div>
       </div>
-
-      <div id="display"></div>
     </div>
-
     <script src="main.js"></script>
   </body>
 </html>

@@ -6,9 +6,9 @@ const display = document.getElementById("display")
 const text = ["残念・・・", "正解！"]
 
 const ansImg1 = document.createElement("img")
-ansImg1.src = "pugg.jpeg"
+ansImg1.src = "./pugg.jpeg"
 const ansImg3 = document.createElement("img")
-ansImg3.src = "pom.jpeg"
+ansImg3.src = "./pom.jpeg"
 
 button1.addEventListener("click", () => {
   display.textContent = text[0]
@@ -36,4 +36,5 @@ const sio = {
   mentor: true,
   hobby: ["coffee", "JP drum", "YouTube"],
 }
+console.log(sio)
 sio.seeNote
