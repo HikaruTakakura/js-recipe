@@ -1,3 +1,4 @@
 {
-  "extensions.ignoreRecommendations": false
+  "extensions.ignoreRecommendations": false,
+  "liveServer.settings.port": 5501
 }
