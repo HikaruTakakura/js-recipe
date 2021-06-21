@@ -1,0 +1,9 @@
+#quiz-image {
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+}
+
+.hidden {
+  display: none;
+}
