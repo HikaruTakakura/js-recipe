@@ -32,7 +32,7 @@ const reloadQuiz = function() {
   quizText.textContent = "Q. " + quiz.text
 
   // 画像を表示
-  quizImage.src = "./images/" + quiz.imageinde
+  quizImage.src = "./images/" + quiz.image
 
   // 選択肢（ボタン）の中身を表示
   choice1.textContent = quiz.choices[0].text
