@@ -7,6 +7,7 @@
     "ms-vsliveshare.vsliveshare",
     "christian-kohler.npm-intellisense",
     "coenraads.bracket-pair-colorizer-2",
-    "octref.vetur"
+    "octref.vetur",
+    "aaron-bond.better-comments"
   ]
 }
