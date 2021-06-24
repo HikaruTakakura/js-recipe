@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScriptで要素を操作する</title>
+  <style>
+    .nice-element {
+      color: red;
+    }
+    .great-element {
+      color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScriptで要素を操作する</h1>
+
+  <section>
+    <h3>要素を取得する</h3>
+    <div id="elementId">僕を取得してください</div>
+  </section>
+
+  <section>
+    <h3>要素を取得する - 発展：子要素を取得する</h3>
+    <div id="buttons">
+      <button>0</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+    </div>
+  </section>
+
+  <section>
+    <h3>要素を変更する - textContent</h3>
+    <div id="element-textContent">こんにちは</div>
+  </section>
+
+  <section>
+    <h3>要素を変更する - style</h3>
+    <div id="element-style">こんにちは</div>
+  </section>
+
+  <section>
+    <h3>要素を変更する - className</h3>
+    <div id="element-className">こんにちは</div>
+  </section>
+
+  <section>
+    <h3>要素を変更する - classList</h3>
+    <div id="element-classList">こんにちは</div>
+  </section>
+
+  <section>
+    <h3>要素を追加する - appendChild</h3>
+    <div id="element-appendChild">
+      <div>こんにちは</div>
+    </div>
+  </section>
+
+  <section>
+    <h3>要素を追加する - prepend</h3>
+    <div id="element-prepend">
+      <div>こんにちは</div>
+    </div>
+  </section>
+
+  <section>
+    <h3>要素を削除する - remove</h3>
+    <div>
+      <div>↓かつてここに要素がありました</div>
+      <div id="element-remove">こんにちは</div>
+      <div>↑かつてここに要素がありました</div>
+    </div>
+  </section>
+
+  <!-- 以下の一行で main.js ファイルを読み込む -->
+  <script src="main.js"></script>
+</body>
+</html>
