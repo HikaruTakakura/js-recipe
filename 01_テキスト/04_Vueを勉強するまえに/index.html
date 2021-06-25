@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vueを勉強する前に</title>
+</head>
+<body>
+  <h1>Vueを勉強する前に</h1>
+
+  <section>
+    <h3>ふつうのJavaScript</h3>
+    <input type="text" id="input">
+    <button id="button">追加</button>
+    <div id="container"></div>
+  </section>
+
+  <section>
+    <h3>Vue</h3>
+    <div id="app">
+      <input type="text" v-model="text">
+      <button v-on:click="addCard">追加</button>
+      <div id="container">
+        <div v-for="text in list">{{ text }}</div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="main.js"></script>
+</body>
+</html>
