@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vueの発展</title>
+</head>
+<body>
+  <h1>Vueの発展</h1>
+
+  <section id="v-if">
+    <h3>v-if</h3>
+    <button v-on:click="hyouji">表示する</button>
+    <div v-if="seen">みつかった！</div>
+  </section>
+
+  <section id="v-if-sign-in">
+    <h3>v-if でサインイン</h3>
+    <!-- この要素は user が null でないときに表示される -->
+    <div v-if="user !== null">
+      <button v-on:click="signOut">サインアウト</button>
+      <div>
+        {{ user.name }}さん、こんにちは！
+      </div>
+    </div>
+    <!-- この要素はそれ以外の場合に表示される -->
+    <div v-else>
+      <button v-on:click="signIn">サインイン</button>
+      <div>
+        サインインしてください。
+      </div>
+    </div>
+  </section>
+
+  <section id="v-for">
+    <h3>v-for</h3>
+    <div v-for="animal in animals">{{ animal }}</div>
+  </section>
+
+  <section id="v-for-push">
+    <h3>v-for（配列に追加）</h3>
+    <button v-on:click="addAnimal">追加</button>
+    <div v-for="animal in animals">{{ animal }}</div>
+  </section>
+
+  <section id="v-bind">
+    <h3>v-bind</h3>
+    <div v-bind:class="helloClass">こんにちは</div>
+  </section>
+
+  <section id="computed">
+    <h3>computed</h3>
+    <div v-for="item in items">
+      {{ item.price }} 円の {{ item.name }} が {{ item.amount }} 個あります。
+    </div>
+    <div>全部で{{ totalPrice }}円です。</div>
+  </section>
+
+  <section id="computed-recalculate">
+    <h3>computed 再計算</h3>
+    <div v-for="item in items">
+      <span>
+        {{ item.price }} 円の {{ item.name }} が {{ item.amount }} 個あります。
+      </span>
+      <button v-on:click="addItem(item)">＋１個</button>
+    </div>
+    <div>全部で{{ totalPrice }}円です。</div>
+  </section>
+
+  <section id="v-model">
+    <h3>v-model</h3>
+    <input type="text" v-model="inputValue" />
+    <div>{{ inputValue }}</div>
+  </section>
+
+  <section id="created">
+    <h3>created</h3>
+    <div>{{ memo }}</div>
+    <input type="text" v-model="inputValue">
+    <button v-on:click="save">保存</button>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
